@@ -13,7 +13,7 @@ Demo app: swarm.mydomain.com
 #### Passwords
 
 The default login for traefik API / Web UI is admin / abc123.  
-New passwords needs to be encrypted through [HTPASSWORD]: http://www.htaccesstools.com/htpasswd-generator .
+New passwords needs to be encrypted through [HTPASSWORD](http://www.htaccesstools.com/htpasswd-generator).
 You also need to escape "$" with "$$" afterwards.
 
 #### LetsEncrypt
