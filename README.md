@@ -5,9 +5,9 @@ This setup has no dependencies on config files (traefik.toml). So will not cause
 
 #### Basic setup (change domain to whatever you want to use)
 
-Traefik API/UI: traefik.swarm.mydomain.com
-Portainer UI: portainer.swarm.mydomain.com
-Demo app: swarm.mydomain.com
+Traefik API/UI: traefik.swarm.mydomain.com  
+Portainer UI: portainer.swarm.mydomain.com  
+Demo app: swarm.mydomain.com  
 
 #### Passwords
 
