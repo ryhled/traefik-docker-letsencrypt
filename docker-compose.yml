@@ -2,15 +2,14 @@ version: "3.7"
 services:
 
   traefik:
-    image: traefik:alpine
+    image: traefik:latest
     command:
-      - "--entrypoints=Name:http Address::80"
+      - "--entrypoints=Name:http Address::80 Redirect.EntryPoint:https"
       - "--entrypoints=Name:https Address::443 TLS"
       - "--defaultentrypoints=http,https"
       - "--logLevel=debug"
       - "--api"
       - "--ping"
-      - "--ping.entrypoint=http"
       - "--docker"
       - "--docker.swarmmode"
       - "--docker.domain=swarm.mydomain.com"
