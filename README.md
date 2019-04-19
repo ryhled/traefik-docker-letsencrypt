@@ -1,12 +1,12 @@
 # Traefik with lets encrypt and portainer
 
-Configures Traefik to run in a docker swarm with lets encrypt. Includes portainer to administer the swarm.
+Configures Traefik to run in a docker swarm with lets encrypt. Includes portainer to administer the swarm.  
 This setup has no dependencies on config files (traefik.toml).
 
 #### Basic setup (change domain to whatever you want to use)
 
-Traefik API/UI: swarm.mydomain.com:8080
-Portainer UI: admin.swarm.mydomain.com
+Traefik API/UI: swarm.mydomain.com:8080  
+Portainer UI: admin.swarm.mydomain.com  
 Demo app: swarm.mydomain.com
 
 #### LetsEncrypt
