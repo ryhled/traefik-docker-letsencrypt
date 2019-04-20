@@ -24,4 +24,4 @@ You also need to escape "$" with "$$" afterwards.
 Deploy it by running: docker stack deploy -c ./docker-compose.yml traefik-services
 where 'traefik' is the name you want your stack to be deployed as (tip: change network prefix in compose file as well if you change).
 
-You can download the acme.json file by running the command `docker cp {containerId}:/acme.json .`
+You can download the acme.json file by running the command `docker cp {containerId}:/acme.json .`.
