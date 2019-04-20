@@ -34,6 +34,7 @@ services:
         mode: host
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
+      # - ${PWD}/config/acme.json:/acme.json # Replace ${PWD} with absolute path to the location of this file. Used if you need to import old acme data.
     deploy:
       labels:
         - "traefik.enable=true"

@@ -1,7 +1,7 @@
 # Traefik with lets encrypt and portainer
 
 Configures Traefik to run in a docker swarm with lets encrypt. Includes portainer to administer the swarm.
-This setup has no dependencies on config files (traefik.toml). So will not cause you any volume-mapping issues if you sit on a windows machine..
+Uses commands for traefik configuration.
 
 #### Basic setup (change domain to whatever you want to use)
 
@@ -23,3 +23,5 @@ You also need to escape "$" with "$$" afterwards.
 
 Deploy it by running: docker stack deploy -c ./docker-compose.yml traefik-services
 where 'traefik' is the name you want your stack to be deployed as (tip: change network prefix in compose file as well if you change).
+
+You can download the acme.json file by running the command ´docker cp {containerId}:/acme.json .´
