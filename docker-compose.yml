@@ -16,7 +16,7 @@ services:
       - "--docker.watch"
       - "--acme"
       - "--acme.acmelogging=true"
-      - "--acme.storage=acme.json"
+      - "--acme.storage=/data/acme.json" # stores certificates on the 'traefikdata' docker volume
       - "--acme.email=admin@mydomain.com"
       - "--acme.entrypoint=https"
       - "--acme.httpchallenge.entrypoint=http"
@@ -33,7 +33,8 @@ services:
         protocol: tcp
         mode: host
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "traefikdata:/data"
       # - ${PWD}/config/acme.json:/acme.json # Replace ${PWD} with absolute path to the location of this file. Used if you need to import old acme data.
     deploy:
       labels:
@@ -76,6 +77,16 @@ services:
         - "traefik.docker.network=traefik-services_core"
         - "traefik.port=80"
         - "traefik.frontend.rule=Host:swarm.mydomain.com"
+        - "traefik.frontend.headers.SSLHost=swarm.mydomain.com"
+        - traefik.frontend.entryPoints=https
+        - traefik.frontend.headers.forceSTSHeader=true
+        - traefik.frontend.headers.STSSeconds=315360000
+        - traefik.frontend.headers.STSPreload=true
+        - "traefik.frontend.headers.SSLRedirect=true"
+        - "traefik.frontend.headers.browserXSSFilter=true"
+        - "traefik.frontend.headers.contentTypeNosniff=true"
+        # - "traefik.frontend.headers.frameDeny=true"
+        # - traefik.frontend.headers.STSIncludeSubdomains=true
 
 networks:
   core:
@@ -85,3 +96,4 @@ networks:
  
 volumes:
   portainerdata:
+  traefikdata:
