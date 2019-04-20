@@ -21,7 +21,7 @@ You also need to escape "$" with "$$" afterwards.
 * Ensure that the domain you use has ben configured to point against your docker machines ip address.
 * If you happen to use cloudflare to manage your domain and ssl do not work, try disabling cloudflare proxy and see if it helps.
 
-Deploy it by running: docker stack deploy -c ./docker-compose.yml traefik-services
+Deploy it by running: `docker stack deploy -c ./docker-compose.yml traefik-services`
 where 'traefik' is the name you want your stack to be deployed as (tip: change network prefix in compose file as well if you change).
 
-You can download the acme.json file by running the command ´docker cp {containerId}:/acme.json .´
+You can download the acme.json file by running the command `docker cp {containerId}:/acme.json .`.
